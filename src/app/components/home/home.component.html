@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <img src="../../../assets/img/MasGlobal_logo_full-1.png" alt="">
+    </div>
+    <div class="row">
+        <h2>Employees Data</h2>
+    </div>
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{errorText}}
+    </div>
+    <div class="row">
+        <div class="input-group mb-3">
+            <input [(ngModel)]="txtSearched" type="text" class="form-control" placeholder="Enter an Employee Id">
+            <div class="input-group-append">
+                <button (click)="getData()" class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i>  Get Employees</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Employee Name</th>
+                    <th>Contract Type</th>
+                    <th>Salary</th>
+                    <th>Annual Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employees">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.contractTypeName}}</td>
+                    <td>{{item.salary}}</td>
+                    <td>{{item.annualSalary}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class="noData" *ngIf="employees.length === 0">
+            <i class="fas fa-user-friends"></i>
+            <div class="textContainer">
+                <p class="text-center">Please enter an employee id or make click over "Get Employees" button to get data</p>
+            </div>
+        </div>
+    </div>
+</div>

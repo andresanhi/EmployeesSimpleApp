@@ -1,0 +1,27 @@
+h2 {
+    margin-bottom: 2%;
+}
+
+img {
+    margin-bottom: 5%;
+    width: 20rem;
+}
+
+button {
+    width: 10rem !important;
+}
+
+.noData i {
+    text-align: center;
+    font-size: 5em;
+    margin-left: 90%;
+}
+
+.noData p {
+    text-align: center;
+}
+
+.textContainer {
+    min-width: 100% !important;
+    margin-left: 50%;
+}
