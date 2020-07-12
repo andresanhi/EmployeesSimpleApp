@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { Employee } from 'src/app/models/Employee';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,18 @@ import { Employee } from 'src/app/models/Employee';
 })
 export class HomeComponent implements OnInit {
 
+  private url: string;
   employees: Employee[] = [];
   txtSearched = '';
   errorText = '';
   error = false;
   constructor(
-    private employeeServices: EmployeeService
-  ) { }
+    private employeeServices: EmployeeService,
+  ) {
+  }
 
   ngOnInit() {
+    console.log(environment.apiUrl);
   }
 
   getData() {
@@ -47,6 +51,7 @@ export class HomeComponent implements OnInit {
       console.log(this.employees);
     },
     error => {
+      console.log(error);
       this.errorText = error;
       this.error = true;
       setTimeout(() => {

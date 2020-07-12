@@ -2,6 +2,10 @@ export interface Employee {
     id: number;
     name: string;
     contractTypeName: string;
-    salary: number;
+    roleId: number;
+    roleName: string;
+    roleDescription: any;
+    hourlySalary: number;
+    monthlySalary: number;
     annualSalary: number;
 }
